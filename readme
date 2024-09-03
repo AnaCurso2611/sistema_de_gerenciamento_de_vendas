@@ -1,0 +1,59 @@
+# Sistema de Gerenciamento de Vendas
+
+Este projeto é um sistema de banco de dados desenvolvido para gerenciar informações de clientes, produtos e vendas em uma loja.
+
+## Estrutura do Banco de Dados
+
+O banco de dados `sistema_vendas` contém as seguintes tabelas:
+
+1. **Tabela `clientes`:**
+   - `clienteID` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `nome` (VARCHAR(100), NOT NULL)
+   - `email` (VARCHAR(100), UNIQUE)
+   - `telefone` (VARCHAR(20))
+
+2. **Tabela `produtos`:**
+   - `produtoID` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `nome` (VARCHAR(100), NOT NULL)
+   - `preco` (DECIMAL(10,2), NOT NULL)
+   - `quantidade_estoque` (INT, NOT NULL)
+
+3. **Tabela `vendas`:**
+   - `vendaID` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `clienteID` (INT, FOREIGN KEY para `clientes(clienteID)`)
+   - `produtoID` (INT, FOREIGN KEY para `produtos(produtoID)`)
+   - `quantidade` (INT, NOT NULL)
+   - `data_venda` (DATE, NOT NULL)
+
+## Instruções de Uso
+
+1. **Criação do Banco de Dados e Tabelas:**
+   - Execute o script SQL `create_tables.sql` para criar o banco de dados e as tabelas.
+
+2. **Inserção de Dados:**
+   - Use o script `insert_data.sql` para inserir dados de exemplo nas tabelas.
+
+3. **Consultas e Relatórios:**
+   - Execute as consultas SQL fornecidas para gerar relatórios e visualizar os dados armazenados.
+
+4. **Atualização e Deleção de Dados:**
+   - Use os scripts de atualização e deleção para modificar e remover dados conforme necessário.
+
+## Arquivos
+
+- `create_tables.sql`: Script SQL para criar o banco de dados e as tabelas.
+- `insert_data.sql`: Script SQL para inserir dados de exemplo.
+- `queries.sql`: Script SQL com consultas para visualizar os dados e realizar operações de atualização e deleção.
+
+## Requisitos
+
+- MySQL ou MariaDB para executar os scripts SQL.
+- Cliente SQL para interação com o banco de dados.
+
+## Contribuições
+
+Se desejar contribuir com melhorias ou correções, por favor, envie um pull request ou abra uma issue.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
